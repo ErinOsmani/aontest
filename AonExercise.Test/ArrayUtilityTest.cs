@@ -91,6 +91,20 @@
             Assert.Equal(new int[] { 1, 2, 3, 4, 5, 6, 8, 10 }, output);
         }
 
+        [Fact]
+        public void TwoArrays_WithSameElement_Should_Return_MergedArray()
+        {
+            // Arrange
+            var array1 = new int[] { 1, 3, 5 };
+            var array2 = new int[] { 2, 4, 5, 8, 10 };
+
+            // Act
+            var output = ArrayUtility.MergeSortedArrays(array1, array2);
+
+            // Assert
+            Assert.Equal(new int[] { 1, 2, 3, 4, 5, 5, 8, 10 }, output);
+        }
+
 
     }
 }
